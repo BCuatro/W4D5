@@ -18,5 +18,17 @@ end
     
 
 
-p third_anagrams("gizmo", "sally")    #=> false
-p third_anagrams("elvis", "lives")    #=> true
+
+
+def fourth_anagrams(string1,string2)
+    hash1 = Hash.new(0)
+    hash2 = Hash.new(0)
+
+    string1.each_char {|char| hash1[char] += 1}
+    string2.each_char {|char| hash2[char] += 1}
+    
+    hash1 == hash2
+end
+
+p fourth_anagrams("gizmo", "sally")    #=> false
+p fourth_anagrams("elvis", "lives")    #=> true
