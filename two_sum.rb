@@ -11,5 +11,22 @@ def bad_two_sum?(array,target)
 end
 
 arr = [0, 1, 5, 7]
-p bad_two_sum?(arr, 6) # => should be true
-p bad_two_sum?(arr, 10) # => should be false
+bad_two_sum?(arr, 6) # => should be true
+bad_two_sum?(arr, 10) # => should be false
+
+def okay_two_sum?(array, target)
+
+end
+
+
+def two_sum?(array,target)
+    hash = {}
+    count = 0
+    array.each{|k| hash[k] = target -k}
+    hash.each {|k,v| return true if hash[target - k] == k && k != v  }
+    false
+end
+
+arr = [0, 1, 5, 7]
+p two_sum?(arr, 6) # => should be true
+p two_sum?(arr, 10) # => should be false

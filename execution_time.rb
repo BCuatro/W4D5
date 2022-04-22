@@ -46,7 +46,7 @@
 
 def largest_contiguous_subsum(array)
     max_sum = array.first
-    current_sum=array.first
+    current_sum = array.first
 
     (1...array.length).each do |index|
         current_sum = 0 if current_sum < 0
