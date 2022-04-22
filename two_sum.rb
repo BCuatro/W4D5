@@ -15,13 +15,30 @@ bad_two_sum?(arr, 6) # => should be true
 bad_two_sum?(arr, 10) # => should be false
 
 def okay_two_sum?(array, target)
+    sorted = array.sort
+    i = 0
+    j = array.length-1
+    until j<= i
+        
+        case sorted[i] + sorted[j]  <=> target
+        when 0
+            return true
+        when -1
+            i +=1
+        when 1
+            j-=1
+        end
+    end
+    false
 
 end
+arr = [0, 1, 5, 7]
+p okay_two_sum?(arr, 6) # => should be true
+p okay_two_sum?(arr, 10) # => should be false
 
 
 def two_sum?(array,target)
     hash = {}
-    count = 0
     array.each{|k| hash[k] = target -k}
     hash.each {|k,v| return true if hash[target - k] == k && k != v  }
     false
